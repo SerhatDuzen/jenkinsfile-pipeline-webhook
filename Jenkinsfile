@@ -1,14 +1,17 @@
 pipeline {
     agent any
-    
-        stages {
+    stages {
+        stage('build') {
+            steps {
+                echo 'Compiling the java source code'
+                sh 'javac Hello.java'
+            }
+        }
         stage('run') {
             steps {
-                echo 'This is run stepppp'
-                sh 'python --version'
-                sh 'python pipeline.py'
+                echo 'Running the compiled java code.'
+                sh 'java Hello'
             }
-        
-    }
+        }
     }
 }
