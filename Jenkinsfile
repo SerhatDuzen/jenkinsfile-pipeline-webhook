@@ -1,11 +1,10 @@
 pipeline {
-    agent { label 'master' }
+    agent any
     stages {
         stage('build') {
             steps {
-                echo "This is build step"
-                sh 'echo using shell within Jenkinsfile'
-                echo 'not using shell in the Jenkinsfile'
+                echo 'this is build step'
+                sh 'echo Integrating Jenkins Pipeline with GitHub Webhook using Jenkinsfile'
             }
         }
     }
